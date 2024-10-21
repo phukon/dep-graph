@@ -1,0 +1,66 @@
+{
+  "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\dist\\assets\\index-BUKLvxde.js": [],
+  "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\postcss.config.js": [],
+  "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\App.tsx": [
+    "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\AllWeather.js",
+    "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\discover-tabs\\Collections.js",
+    "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\discover-tabs\\Smallcases.js",
+    "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\Home.js",
+    "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\Landing.js",
+    "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\Navbar.js",
+    "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\Wishlist.js"
+  ],
+  "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\AllWeather.tsx": [
+    "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\ui\\button.js"
+  ],
+  "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\discover-tabs\\Collections.tsx": [
+    "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\Discover.js"
+  ],
+  "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\discover-tabs\\Smallcases.tsx": [
+    "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\Discover.js",
+    "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\ui\\button.js"
+  ],
+  "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\discover-tabs\\Tabs.tsx": [
+    "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\ui\\button.js",
+    "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\discover-tabs\\Smallcases.js"
+  ],
+  "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\Discover.tsx": [
+    "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\discover-tabs\\Tabs.js"
+  ],
+  "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\Home.tsx": [],
+  "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\Landing.tsx": [
+    "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\ui\\button.js",
+    "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\ui\\LoginBox.js"
+  ],
+  "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\Navbar.tsx": [
+    "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\ui\\LoginBox.js"
+  ],
+  "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\ui\\button.tsx": [],
+  "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\ui\\checkbox.tsx": [],
+  "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\ui\\dialog.tsx": [],
+  "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\ui\\input-otp.tsx": [],
+  "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\ui\\input.tsx": [],
+  "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\ui\\label.tsx": [],
+  "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\ui\\LoginBox.tsx": [
+    "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\ui\\button.js",
+    "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\ui\\input.js"
+  ],
+  "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\ui\\popover.tsx": [],
+  "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\ui\\radio-group.tsx": [],
+  "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\ui\\select.tsx": [],
+  "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\ui\\separator.tsx": [],
+  "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\Wishlist.tsx": [
+    "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\components\\ui\\button.js"
+  ],
+  "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\lib\\smallcases.ts": [],
+  "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\lib\\utils.ts": [],
+  "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\main.tsx": [],
+  "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\reducers\\sorting.ts": [],
+  "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\reducers\\wishlist.ts": [],
+  "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\store.ts": [
+    "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\reducers\\sorting.js",
+    "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\src\\reducers\\wishlist.js"
+  ],
+  "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\tailwind.config.js": [],
+  "C:\\Users\\rikip\\Desktop\\EXIM\\Work\\iterate-ai\\smallcase-sandbox\\vite.config.ts": []
+}

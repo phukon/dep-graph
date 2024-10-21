@@ -1,0 +1,21 @@
+{
+  "name": "dep-graph",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@babel/parser": "^7.25.8",
+    "@babel/traverse": "^7.25.7",
+    "d3": "^7.9.0",
+    "fs": "^0.0.1-security",
+    "graphlib": "^2.1.8",
+    "graphlib-dot": "^0.6.4",
+    "path": "^0.12.7"
+  }
+}
