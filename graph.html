@@ -6,6 +6,14 @@
   <title>React Component Dependency Graph</title>
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <style>
+    html, body {
+      height: 100%; /* Ensure the body takes full height */
+      margin: 0; /* Remove default margin */
+    }
+    svg {
+      width: 100%; /* Make SVG take full width */
+      height: 100%; /* Make SVG take full height */
+    }
     .links line {
       stroke: #999;
       stroke-opacity: 0.6;
@@ -18,65 +26,71 @@
       font-family: sans-serif;
       font-size: 10px;
     }
+    .entry-point {
+      fill: #ff0000;
+    }
   </style>
 </head>
 <body>
-  <svg width="960" height="600"></svg>
+  <svg></svg>
   <script>
     // Load the dependency graph data
     fetch('dependencyGraph.json')
       .then(response => response.json())
       .then(data => {
-        const nodes = new Set();
+        const nodes = Object.keys(data).map(file => ({ id: file }));
         const links = [];
-
-        Object.keys(data).forEach(source => {
-          nodes.add(source);
-          data[source].forEach(target => {
-            nodes.add(target);
-            links.push({ source, target });
+        Object.entries(data).forEach(([source, { outgoingDependencies }]) => {
+          outgoingDependencies.forEach(dep => {
+            if (data[dep.resolvedPath]) {
+              links.push({ source, target: dep.resolvedPath });
+            }
           });
         });
 
-        const nodesArray = Array.from(nodes).map(file => ({ id: file }));
+        const simulation = d3.forceSimulation(nodes)
+          .force("link", d3.forceLink(links).id(d => d.id).distance(100))
+          .force("charge", d3.forceManyBody().strength(-100))
+          .force("center", d3.forceCenter(600, 450));
 
-        const svg = d3.select("svg"),
-              width = +svg.attr("width"),
-              height = +svg.attr("height");
-
-        const simulation = d3.forceSimulation(nodesArray)
-          .force("link", d3.forceLink(links).id(d => d.id).distance(50))
-          .force("charge", d3.forceManyBody().strength(-200))
-          .force("center", d3.forceCenter(width / 2, height / 2));
+        const svg = d3.select("svg");
 
         const link = svg.append("g")
           .attr("class", "links")
           .selectAll("line")
           .data(links)
-          .enter().append("line")
-          .attr("stroke-width", 1);
+          .enter().append("line");
 
         const node = svg.append("g")
           .attr("class", "nodes")
-          .selectAll("circle")
-          .data(nodesArray)
-          .enter().append("circle")
-          .attr("r", 5)
-          .attr("fill", "steelblue")
+          .selectAll("g")
+          .data(nodes)
+          .enter().append("g")
           .call(d3.drag()
             .on("start", dragstarted)
             .on("drag", dragged)
             .on("end", dragended));
 
-        const label = svg.append("g")
-          .attr("class", "labels")
-          .selectAll("text")
-          .data(nodesArray)
-          .enter().append("text")
-          .attr("dy", -3)
-          .text(d => path.basename(d.id));
+        node.append("circle")
+          .attr("r", 5)
+          .attr("class", d => data[d.id].incomingDependencies.length === 0 ? "entry-point" : "");
 
-        simulation.on("tick", () => {
+        node.append("text")
+          .attr("dx", 12)
+          .attr("dy", ".35em")
+          .text(d => d.id);
+
+        node.append("title")
+          .text(d => d.id);
+
+        simulation
+          .nodes(nodes)
+          .on("tick", ticked);
+
+        simulation.force("link")
+          .links(links);
+
+        function ticked() {
           link
             .attr("x1", d => d.source.x)
             .attr("y1", d => d.source.y)
@@ -84,13 +98,8 @@
             .attr("y2", d => d.target.y);
 
           node
-            .attr("cx", d => d.x)
-            .attr("cy", d => d.y);
-
-          label
-            .attr("x", d => d.x)
-            .attr("y", d => d.y);
-        });
+            .attr("transform", d => `translate(${d.x},${d.y})`);
+        }
 
         function dragstarted(event, d) {
           if (!event.active) simulation.alphaTarget(0.3).restart();
@@ -109,15 +118,6 @@
           d.fy = null;
         }
       });
-
-    // Helper to extract filename from path
-    function pathBasename(path) {
-      if (!path) return 'Unknown';
-      const parts = path.split('/');
-      return parts[parts.length - 1] || path;
-    }
-    // Assign the helper to use in label text
-    const path = { basename: pathBasename };
   </script>
 </body>
 </html>
