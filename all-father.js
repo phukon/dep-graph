@@ -1,6 +1,6 @@
 const fs = require('fs')
 
-function findTopLevelComponent(dependencyGraph) {
+function findTopComponents(dependencyGraph, topCount = 10) {
   const indirectImportCounts = {};
 
   function countIndirectImports(file, visited = new Set()) {
@@ -29,16 +29,19 @@ function findTopLevelComponent(dependencyGraph) {
     }
   });
 
-  const topLevelComponent = Object.entries(indirectImportCounts)
-    .reduce((max, [file, count]) => count > max[1] ? [file, count] : max, ['', 0]);
+  // Sort components by import count and return top 'topCount'
+  const topComponents = Object.entries(indirectImportCounts)
+    .sort(([, countA], [, countB]) => countB - countA)
+    .slice(0, topCount)
+    .map(([file, count]) => ({ file, indirectImportCount: count }));
 
-  return {
-    file: topLevelComponent[0],
-    indirectImportCount: topLevelComponent[1]
-  };
+  return topComponents;
 }
 
+// Usage
 const graphData = JSON.parse(fs.readFileSync('dependencyGraph.json', 'utf-8'));
-const topComponent = findTopLevelComponent(graphData);
-console.log(`Top-level component: ${topComponent.file}`);
-console.log(`Indirect import count: ${topComponent.indirectImportCount}`);
+const topComponents = findTopComponents(graphData, 100);
+console.log("Top 10 components by indirect import count:");
+topComponents.forEach((component, index) => {
+  console.log(`${index + 1}. ${component.file}: ${component.indirectImportCount} imports`);
+});

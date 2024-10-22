@@ -54,8 +54,39 @@ function extractImports(filePath) {
   return imports;
 }
 
-// Function to resolve relative imports
-function resolveImport(rootDir, basePath, importPath) {
+// New function to parse tsconfig.json and extract path aliases
+function getPathAliases(rootDir) {
+  const tsconfigPath = path.join(rootDir, 'tsconfig.json');
+  if (!fs.existsSync(tsconfigPath)) {
+    return {};
+  }
+
+  try {
+    const tsconfig = JSON.parse(fs.readFileSync(tsconfigPath, 'utf-8'));
+    const paths = tsconfig.compilerOptions?.paths || {};
+    const baseUrl = tsconfig.compilerOptions?.baseUrl || './';
+
+    const aliases = {};
+    for (const [alias, [aliasPath]] of Object.entries(paths)) {
+      aliases[alias.replace('/*', '')] = path.join(rootDir, baseUrl, aliasPath.replace('/*', ''));
+    }
+    return aliases;
+  } catch (error) {
+    console.error('Error parsing tsconfig.json:', error.message);
+    return {};
+  }
+}
+
+// Updated resolveImport function
+function resolveImport(rootDir, basePath, importPath, aliases) {
+  // Check if the import matches any alias
+  for (const [alias, aliasPath] of Object.entries(aliases)) {
+    if (importPath.startsWith(alias)) {
+      const resolvedPath = path.join(aliasPath, importPath.slice(alias.length));
+      return path.relative(rootDir, resolvedPath);
+    }
+  }
+
   if (importPath.startsWith('.')) {
     const absolutePath = path.resolve(path.dirname(basePath), importPath);
     const relativePath = path.relative(rootDir, absolutePath);
@@ -79,7 +110,7 @@ function resolveImport(rootDir, basePath, importPath) {
     // If still not found, return the normalized relative path
     return path.normalize(relativePath);
   }
-  return importPath; // Return as-is if it's not a relative import
+  return importPath; // Return as-is if it's not a relative import or alias
 }
 
 // Main function to build dependency graph data
@@ -87,6 +118,7 @@ function buildDependencyGraph(rootDir) {
   // Check if 'src' directory exists and use it if available
   const srcDir = path.join(rootDir, 'src');
   const targetDir = fs.existsSync(srcDir) ? srcDir : rootDir;
+  const aliases = getPathAliases(rootDir);
 
   const files = getAllFiles(targetDir);
   const dependencyGraph = {};
@@ -98,9 +130,7 @@ function buildDependencyGraph(rootDir) {
       incomingDependencies: [],
       outgoingDependencies: imports.map((imp) => ({
         source: imp.source,
-        resolvedPath: imp.isRelative
-          ? resolveImport(rootDir, file, imp.source)
-          : imp.source,
+        resolvedPath: resolveImport(rootDir, file, imp.source, aliases),
       })),
     };
   });
