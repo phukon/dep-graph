@@ -14669,23 +14669,84 @@
   },
   "src\\app\\legacy\\psammead\\moment-timezone-include\\src\\index.js": {
     "incomingDependencies": [],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "webpack",
+        "resolvedPath": "webpack"
+      },
+      {
+        "source": "./writeNewTimezoneData",
+        "resolvedPath": "src\\app\\legacy\\psammead\\moment-timezone-include\\src\\writeNewTimezoneData\\index.js"
+      },
+      {
+        "source": "./replaceOriginalTimezoneData",
+        "resolvedPath": "src\\app\\legacy\\psammead\\moment-timezone-include\\src\\replaceOriginalTimezoneData\\index.js"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\moment-timezone-include\\src\\postInstall\\index.js": {
     "incomingDependencies": [],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "../writeNewTimezoneData",
+        "resolvedPath": "src\\app\\legacy\\psammead\\moment-timezone-include\\src\\writeNewTimezoneData\\index.js"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\moment-timezone-include\\src\\replaceOriginalTimezoneData\\index.js": {
-    "incomingDependencies": [],
-    "outgoingDependencies": []
+    "incomingDependencies": [
+      "src\\app\\legacy\\psammead\\moment-timezone-include\\src\\index.js"
+    ],
+    "outgoingDependencies": [
+      {
+        "source": "moment-timezone/data/packed/latest.json",
+        "resolvedPath": "moment-timezone/data/packed/latest.json"
+      },
+      {
+        "source": "../writeToNestedFile",
+        "resolvedPath": "src\\app\\legacy\\psammead\\moment-timezone-include\\src\\writeToNestedFile\\index.js"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\moment-timezone-include\\src\\writeNewTimezoneData\\index.js": {
-    "incomingDependencies": [],
-    "outgoingDependencies": []
+    "incomingDependencies": [
+      "src\\app\\legacy\\psammead\\moment-timezone-include\\src\\index.js",
+      "src\\app\\legacy\\psammead\\moment-timezone-include\\src\\postInstall\\index.js"
+    ],
+    "outgoingDependencies": [
+      {
+        "source": "moment-timezone/data/packed/latest.json",
+        "resolvedPath": "moment-timezone/data/packed/latest.json"
+      },
+      {
+        "source": "moment-timezone/moment-timezone-utils",
+        "resolvedPath": "moment-timezone/moment-timezone-utils"
+      },
+      {
+        "source": "../writeToNestedFile",
+        "resolvedPath": "src\\app\\legacy\\psammead\\moment-timezone-include\\src\\writeToNestedFile\\index.js"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\moment-timezone-include\\src\\writeToNestedFile\\index.js": {
-    "incomingDependencies": [],
-    "outgoingDependencies": []
+    "incomingDependencies": [
+      "src\\app\\legacy\\psammead\\moment-timezone-include\\src\\replaceOriginalTimezoneData\\index.js",
+      "src\\app\\legacy\\psammead\\moment-timezone-include\\src\\writeNewTimezoneData\\index.js"
+    ],
+    "outgoingDependencies": [
+      {
+        "source": "fs",
+        "resolvedPath": "fs"
+      },
+      {
+        "source": "mkdirp",
+        "resolvedPath": "mkdirp"
+      },
+      {
+        "source": "path",
+        "resolvedPath": "path"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-assets\\src\\amp-boilerplate.jsx": {
     "incomingDependencies": [
@@ -15717,25 +15778,57 @@
     "incomingDependencies": [
       "src\\app\\lib\\config\\services\\amharic.ts"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "moment",
+        "resolvedPath": "moment"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-locales\\moment\\ar.js": {
     "incomingDependencies": [
       "src\\app\\lib\\config\\services\\arabic.ts"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "moment",
+        "resolvedPath": "moment"
+      },
+      {
+        "source": "moment/locale/ar",
+        "resolvedPath": "moment/locale/ar"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-locales\\moment\\az.js": {
     "incomingDependencies": [
       "src\\app\\lib\\config\\services\\azeri.ts"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "moment",
+        "resolvedPath": "moment"
+      },
+      {
+        "source": "moment/locale/az",
+        "resolvedPath": "moment/locale/az"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-locales\\moment\\bn.js": {
     "incomingDependencies": [
       "src\\app\\lib\\config\\services\\bengali.ts"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "moment",
+        "resolvedPath": "moment"
+      },
+      {
+        "source": "moment/locale/bn",
+        "resolvedPath": "moment/locale/bn"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-locales\\moment\\en-gb.js": {
     "incomingDependencies": [
@@ -15746,174 +15839,399 @@
       "src\\app\\lib\\config\\services\\sport.ts",
       "src\\app\\lib\\config\\services\\ws.ts"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "moment",
+        "resolvedPath": "moment"
+      },
+      {
+        "source": "moment/locale/en-gb",
+        "resolvedPath": "moment/locale/en-gb"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-locales\\moment\\es.js": {
     "incomingDependencies": [
       "src\\app\\lib\\config\\services\\mundo.ts"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "moment",
+        "resolvedPath": "moment"
+      },
+      {
+        "source": "moment/locale/es",
+        "resolvedPath": "moment/locale/es"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-locales\\moment\\gu.js": {
     "incomingDependencies": [
       "src\\app\\lib\\config\\services\\gujarati.ts"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "moment",
+        "resolvedPath": "moment"
+      },
+      {
+        "source": "moment/locale/gu",
+        "resolvedPath": "moment/locale/gu"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-locales\\moment\\ha.js": {
     "incomingDependencies": [
       "src\\app\\lib\\config\\services\\hausa.ts"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "moment",
+        "resolvedPath": "moment"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-locales\\moment\\hi.js": {
     "incomingDependencies": [
       "src\\app\\lib\\config\\services\\hindi.ts"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "moment",
+        "resolvedPath": "moment"
+      },
+      {
+        "source": "moment/locale/hi",
+        "resolvedPath": "moment/locale/hi"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-locales\\moment\\ig.js": {
     "incomingDependencies": [
       "src\\app\\lib\\config\\services\\igbo.ts"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "moment",
+        "resolvedPath": "moment"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-locales\\moment\\ky.js": {
     "incomingDependencies": [
       "src\\app\\lib\\config\\services\\kyrgyz.ts"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "moment",
+        "resolvedPath": "moment"
+      },
+      {
+        "source": "moment/locale/ky",
+        "resolvedPath": "moment/locale/ky"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-locales\\moment\\mr.js": {
     "incomingDependencies": [
       "src\\app\\lib\\config\\services\\marathi.ts"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "moment",
+        "resolvedPath": "moment"
+      },
+      {
+        "source": "moment/locale/mr",
+        "resolvedPath": "moment/locale/mr"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-locales\\moment\\ne.js": {
     "incomingDependencies": [
       "src\\app\\lib\\config\\services\\nepali.ts"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "moment",
+        "resolvedPath": "moment"
+      },
+      {
+        "source": "moment/locale/ne",
+        "resolvedPath": "moment/locale/ne"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-locales\\moment\\om.js": {
     "incomingDependencies": [
       "src\\app\\lib\\config\\services\\afaanoromoo.ts"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "moment",
+        "resolvedPath": "moment"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-locales\\moment\\pa-in.js": {
     "incomingDependencies": [
       "src\\app\\lib\\config\\services\\punjabi.ts"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "moment",
+        "resolvedPath": "moment"
+      },
+      {
+        "source": "moment/locale/pa-in",
+        "resolvedPath": "moment/locale/pa-in"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-locales\\moment\\pcm.js": {
     "incomingDependencies": [
       "src\\app\\lib\\config\\services\\pidgin.ts"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "moment",
+        "resolvedPath": "moment"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-locales\\moment\\ps.js": {
     "incomingDependencies": [
       "src\\app\\lib\\config\\services\\pashto.ts"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "moment",
+        "resolvedPath": "moment"
+      },
+      {
+        "source": "../src/numerals/index",
+        "resolvedPath": "src\\app\\legacy\\psammead\\psammead-locales\\src\\numerals\\index.js"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-locales\\moment\\pt-br.js": {
     "incomingDependencies": [
       "src\\app\\lib\\config\\services\\portuguese.ts"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "moment",
+        "resolvedPath": "moment"
+      },
+      {
+        "source": "moment/locale/pt-br",
+        "resolvedPath": "moment/locale/pt-br"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-locales\\moment\\ru.js": {
     "incomingDependencies": [
       "src\\app\\lib\\config\\services\\russian.ts"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "moment",
+        "resolvedPath": "moment"
+      },
+      {
+        "source": "moment/locale/ru",
+        "resolvedPath": "moment/locale/ru"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-locales\\moment\\rw.js": {
     "incomingDependencies": [
       "src\\app\\lib\\config\\services\\gahuza.ts"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "moment",
+        "resolvedPath": "moment"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-locales\\moment\\si.js": {
     "incomingDependencies": [
       "src\\app\\lib\\config\\services\\sinhala.ts"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "moment",
+        "resolvedPath": "moment"
+      },
+      {
+        "source": "moment/locale/si",
+        "resolvedPath": "moment/locale/si"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-locales\\moment\\so.js": {
     "incomingDependencies": [
       "src\\app\\lib\\config\\services\\somali.ts"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "moment",
+        "resolvedPath": "moment"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-locales\\moment\\sr-cyrl.js": {
     "incomingDependencies": [
       "src\\app\\lib\\config\\services\\serbian.ts"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "moment",
+        "resolvedPath": "moment"
+      },
+      {
+        "source": "moment/locale/sr-cyrl",
+        "resolvedPath": "moment/locale/sr-cyrl"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-locales\\moment\\sr.js": {
     "incomingDependencies": [
       "src\\app\\lib\\config\\services\\serbian.ts"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "moment",
+        "resolvedPath": "moment"
+      },
+      {
+        "source": "moment/locale/sr",
+        "resolvedPath": "moment/locale/sr"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-locales\\moment\\sw.js": {
     "incomingDependencies": [
       "src\\app\\lib\\config\\services\\swahili.ts"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "moment",
+        "resolvedPath": "moment"
+      },
+      {
+        "source": "moment/locale/sw",
+        "resolvedPath": "moment/locale/sw"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-locales\\moment\\ta.js": {
     "incomingDependencies": [
       "src\\app\\lib\\config\\services\\tamil.ts"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "moment",
+        "resolvedPath": "moment"
+      },
+      {
+        "source": "moment/locale/ta",
+        "resolvedPath": "moment/locale/ta"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-locales\\moment\\th.js": {
     "incomingDependencies": [
       "src\\app\\lib\\config\\services\\thai.ts"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "moment",
+        "resolvedPath": "moment"
+      },
+      {
+        "source": "moment/locale/th",
+        "resolvedPath": "moment/locale/th"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-locales\\moment\\ti.js": {
     "incomingDependencies": [
       "src\\app\\lib\\config\\services\\tigrinya.ts"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "moment",
+        "resolvedPath": "moment"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-locales\\moment\\uk.js": {
     "incomingDependencies": [
       "src\\app\\lib\\config\\services\\ukrainian.ts"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "moment",
+        "resolvedPath": "moment"
+      },
+      {
+        "source": "moment/locale/uk",
+        "resolvedPath": "moment/locale/uk"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-locales\\moment\\ur.js": {
     "incomingDependencies": [
       "src\\app\\lib\\config\\services\\urdu.ts"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "moment",
+        "resolvedPath": "moment"
+      },
+      {
+        "source": "moment/locale/ur",
+        "resolvedPath": "moment/locale/ur"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-locales\\moment\\uz.js": {
     "incomingDependencies": [
       "src\\app\\lib\\config\\services\\uzbek.ts"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "moment",
+        "resolvedPath": "moment"
+      },
+      {
+        "source": "moment/locale/uz",
+        "resolvedPath": "moment/locale/uz"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-locales\\moment\\yo.js": {
     "incomingDependencies": [
       "src\\app\\lib\\config\\services\\yoruba.ts"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "moment",
+        "resolvedPath": "moment"
+      },
+      {
+        "source": "moment/locale/yo",
+        "resolvedPath": "moment/locale/yo"
+      }
+    ]
   },
   "src\\app\\legacy\\psammead\\psammead-locales\\src\\numerals\\index.js": {
     "incomingDependencies": [
       "src\\app\\components\\MostRead\\Canonical\\Rank\\index.tsx",
-      "src\\app\\legacy\\psammead\\psammead-calendars\\src\\calendars\\jalaali.js"
+      "src\\app\\legacy\\psammead\\psammead-calendars\\src\\calendars\\jalaali.js",
+      "src\\app\\legacy\\psammead\\psammead-locales\\moment\\ps.js"
     ],
     "outgoingDependencies": []
   },
@@ -18458,9 +18776,23 @@
       "src\\server\\index.jsx",
       "src\\server\\local\\index.js",
       "src\\server\\utilities\\logResponseTime\\index.js",
+      "src\\startServer.js",
       "src\\testHelpers\\loggerMock.js"
     ],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "fs",
+        "resolvedPath": "fs"
+      },
+      {
+        "source": "path",
+        "resolvedPath": "path"
+      },
+      {
+        "source": "winston",
+        "resolvedPath": "winston"
+      }
+    ]
   },
   "src\\app\\lib\\logger.web.js": {
     "incomingDependencies": [
@@ -19798,7 +20130,9 @@
     ]
   },
   "src\\app\\pages\\ArticlePage\\index.tsx": {
-    "incomingDependencies": [],
+    "incomingDependencies": [
+      "src\\app\\pages\\index.js"
+    ],
     "outgoingDependencies": [
       {
         "source": "./ArticlePage",
@@ -20032,7 +20366,9 @@
     ]
   },
   "src\\app\\pages\\ErrorPage\\index.jsx": {
-    "incomingDependencies": [],
+    "incomingDependencies": [
+      "src\\app\\pages\\index.js"
+    ],
     "outgoingDependencies": [
       {
         "source": "ramda/src/pipe",
@@ -20126,7 +20462,9 @@
     "outgoingDependencies": []
   },
   "src\\app\\pages\\FeatureIdxPage\\index.jsx": {
-    "incomingDependencies": [],
+    "incomingDependencies": [
+      "src\\app\\pages\\index.js"
+    ],
     "outgoingDependencies": [
       {
         "source": "./FeatureIdxPage",
@@ -20226,7 +20564,9 @@
     ]
   },
   "src\\app\\pages\\FrontPage\\index.jsx": {
-    "incomingDependencies": [],
+    "incomingDependencies": [
+      "src\\app\\pages\\index.js"
+    ],
     "outgoingDependencies": [
       {
         "source": "./FrontPage",
@@ -20325,7 +20665,9 @@
     ]
   },
   "src\\app\\pages\\HomePage\\index.tsx": {
-    "incomingDependencies": [],
+    "incomingDependencies": [
+      "src\\app\\pages\\index.js"
+    ],
     "outgoingDependencies": [
       {
         "source": "./HomePage",
@@ -20355,11 +20697,57 @@
       {
         "source": "@loadable/component",
         "resolvedPath": "@loadable/component"
+      },
+      {
+        "source": "./ArticlePage",
+        "resolvedPath": "src\\app\\pages\\ArticlePage\\index.tsx"
+      },
+      {
+        "source": "./MediaArticlePage",
+        "resolvedPath": "src\\app\\pages\\MediaArticlePage\\index.tsx"
+      },
+      {
+        "source": "./ErrorPage",
+        "resolvedPath": "src\\app\\pages\\ErrorPage\\index.jsx"
+      },
+      {
+        "source": "./FrontPage",
+        "resolvedPath": "src\\app\\pages\\FrontPage\\index.jsx"
+      },
+      {
+        "source": "./HomePage",
+        "resolvedPath": "src\\app\\pages\\HomePage\\index.tsx"
+      },
+      {
+        "source": "./MostReadPage",
+        "resolvedPath": "src\\app\\pages\\MostReadPage\\index.jsx"
+      },
+      {
+        "source": "./LiveRadioPage",
+        "resolvedPath": "src\\app\\pages\\LiveRadioPage\\index.tsx"
+      },
+      {
+        "source": "./OnDemandAudioPage",
+        "resolvedPath": "src\\app\\pages\\OnDemandAudioPage\\index.tsx"
+      },
+      {
+        "source": "./OnDemandTvPage",
+        "resolvedPath": "src\\app\\pages\\OnDemandTvPage\\index.tsx"
+      },
+      {
+        "source": "./TopicPage",
+        "resolvedPath": "src\\app\\pages\\TopicPage\\index.jsx"
+      },
+      {
+        "source": "./FeatureIdxPage",
+        "resolvedPath": "src\\app\\pages\\FeatureIdxPage\\index.jsx"
       }
     ]
   },
   "src\\app\\pages\\LiveRadioPage\\index.tsx": {
-    "incomingDependencies": [],
+    "incomingDependencies": [
+      "src\\app\\pages\\index.js"
+    ],
     "outgoingDependencies": [
       {
         "source": "./LiveRadioPage",
@@ -20450,7 +20838,9 @@
     "outgoingDependencies": []
   },
   "src\\app\\pages\\MediaArticlePage\\index.tsx": {
-    "incomingDependencies": [],
+    "incomingDependencies": [
+      "src\\app\\pages\\index.js"
+    ],
     "outgoingDependencies": [
       {
         "source": "./MediaArticlePage",
@@ -20871,7 +21261,9 @@
     ]
   },
   "src\\app\\pages\\MostReadPage\\index.jsx": {
-    "incomingDependencies": [],
+    "incomingDependencies": [
+      "src\\app\\pages\\index.js"
+    ],
     "outgoingDependencies": [
       {
         "source": "./MostReadPage",
@@ -20962,7 +21354,9 @@
     ]
   },
   "src\\app\\pages\\OnDemandAudioPage\\index.tsx": {
-    "incomingDependencies": [],
+    "incomingDependencies": [
+      "src\\app\\pages\\index.js"
+    ],
     "outgoingDependencies": [
       {
         "source": "ramda/src/pipe",
@@ -21097,7 +21491,9 @@
     ]
   },
   "src\\app\\pages\\OnDemandTvPage\\index.tsx": {
-    "incomingDependencies": [],
+    "incomingDependencies": [
+      "src\\app\\pages\\index.js"
+    ],
     "outgoingDependencies": [
       {
         "source": "ramda/src/pipe",
@@ -21209,7 +21605,9 @@
     "outgoingDependencies": []
   },
   "src\\app\\pages\\TopicPage\\index.jsx": {
-    "incomingDependencies": [],
+    "incomingDependencies": [
+      "src\\app\\pages\\index.js"
+    ],
     "outgoingDependencies": [
       {
         "source": "./TopicPage",
@@ -23105,7 +23503,12 @@
   },
   "src\\index.js": {
     "incomingDependencies": [],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "./startServer",
+        "resolvedPath": "src\\startServer.js"
+      }
+    ]
   },
   "src\\integration\\common\\a11y.js": {
     "incomingDependencies": [
@@ -23439,7 +23842,24 @@
   },
   "src\\integration\\integrationTestEnvironment.js": {
     "incomingDependencies": [],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "jest-environment-jsdom",
+        "resolvedPath": "jest-environment-jsdom"
+      },
+      {
+        "source": "./utils/fetchDom",
+        "resolvedPath": "src\\integration\\utils\\fetchDom.js"
+      },
+      {
+        "source": "./utils/getPageTypeFromTestPath",
+        "resolvedPath": "src\\integration\\utils\\getPageTypeFromTestPath.js"
+      },
+      {
+        "source": "./utils/camelCaseToText",
+        "resolvedPath": "src\\integration\\utils\\camelCaseToText.js"
+      }
+    ]
   },
   "src\\integration\\pages\\articles\\ampTests.js": {
     "incomingDependencies": [],
@@ -23916,20 +24336,56 @@
     ]
   },
   "src\\integration\\utils\\camelCaseToText.js": {
-    "incomingDependencies": [],
+    "incomingDependencies": [
+      "src\\integration\\integrationTestEnvironment.js"
+    ],
     "outgoingDependencies": []
   },
   "src\\integration\\utils\\fetchDom.js": {
-    "incomingDependencies": [],
-    "outgoingDependencies": []
+    "incomingDependencies": [
+      "src\\integration\\integrationTestEnvironment.js"
+    ],
+    "outgoingDependencies": [
+      {
+        "source": "isomorphic-fetch",
+        "resolvedPath": "isomorphic-fetch"
+      },
+      {
+        "source": "node:dns",
+        "resolvedPath": "node:dns"
+      },
+      {
+        "source": "jsdom",
+        "resolvedPath": "jsdom"
+      },
+      {
+        "source": "retry",
+        "resolvedPath": "retry"
+      }
+    ]
   },
   "src\\integration\\utils\\getPageTypeFromTestPath.js": {
-    "incomingDependencies": [],
+    "incomingDependencies": [
+      "src\\integration\\integrationTestEnvironment.js"
+    ],
     "outgoingDependencies": []
   },
   "src\\integration\\utils\\runTests\\index.js": {
     "incomingDependencies": [],
-    "outgoingDependencies": []
+    "outgoingDependencies": [
+      {
+        "source": "child_process",
+        "resolvedPath": "child_process"
+      },
+      {
+        "source": "minimist",
+        "resolvedPath": "minimist"
+      },
+      {
+        "source": "path",
+        "resolvedPath": "path"
+      }
+    ]
   },
   "src\\poly\\legacy.js": {
     "incomingDependencies": [],
@@ -24170,7 +24626,10 @@
     ]
   },
   "src\\server\\index.jsx": {
-    "incomingDependencies": [],
+    "incomingDependencies": [
+      "src\\startServer.js",
+      "src\\startServer.js"
+    ],
     "outgoingDependencies": [
       {
         "source": "express",
@@ -24259,6 +24718,10 @@
       {
         "source": "./utilities/extractHeaders",
         "resolvedPath": "src\\server\\utilities\\extractHeaders\\index.ts"
+      },
+      {
+        "source": "morgan",
+        "resolvedPath": "morgan"
       }
     ]
   },
@@ -24718,7 +25181,9 @@
     ]
   },
   "src\\startServer.js": {
-    "incomingDependencies": [],
+    "incomingDependencies": [
+      "src\\index.js"
+    ],
     "outgoingDependencies": [
       {
         "source": "cluster",
@@ -24731,6 +25196,26 @@
       {
         "source": "#lib/logger.const",
         "resolvedPath": "src\\app\\lib\\logger.const.js"
+      },
+      {
+        "source": "dotenv",
+        "resolvedPath": "dotenv"
+      },
+      {
+        "source": "http",
+        "resolvedPath": "http"
+      },
+      {
+        "source": "#lib/logger.node",
+        "resolvedPath": "src\\app\\lib\\logger.node.js"
+      },
+      {
+        "source": "./server",
+        "resolvedPath": "src\\server\\index.jsx"
+      },
+      {
+        "source": "./server",
+        "resolvedPath": "src\\server\\index.jsx"
       }
     ]
   },

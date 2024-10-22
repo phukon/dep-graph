@@ -40,8 +40,8 @@ function findTopComponents(dependencyGraph, topCount = 10) {
 
 // Usage
 const graphData = JSON.parse(fs.readFileSync('dependencyGraph.json', 'utf-8'));
-const topComponents = findTopComponents(graphData, 100);
-console.log("Top 10 components by indirect import count:");
+const topComponents = findTopComponents(graphData, 20);
+console.log("Top 20 components by indirect import count:");
 topComponents.forEach((component, index) => {
   console.log(`${index + 1}. ${component.file}: ${component.indirectImportCount} imports`);
 });

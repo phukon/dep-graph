@@ -11,7 +11,13 @@ function getAllFiles(dir, files = []) {
     const fullPath = path.resolve(dir, entry.name);
     if (entry.isDirectory()) {
       // Skip node_modules, dist, and other specific directories
-      if (entry.name !== 'node_modules' && entry.name !== 'dist' && !entry.name.startsWith('.') && entry.name !== 'test' && entry.name !== 'tests') {
+      if (
+        entry.name !== 'node_modules' &&
+        entry.name !== 'dist' &&
+        !entry.name.startsWith('.') &&
+        entry.name !== 'test' &&
+        entry.name !== 'tests'
+      ) {
         getAllFiles(fullPath, files);
       }
     } else if (
@@ -30,22 +36,70 @@ function getAllFiles(dir, files = []) {
   return files;
 }
 
-// Function to extract imports from a file
+// Function to extract imports from a file, including dynamic imports
 function extractImports(filePath) {
   const code = fs.readFileSync(filePath, 'utf-8');
   const imports = [];
   try {
     const ast = parser.parse(code, {
       sourceType: 'module',
-      plugins: ['jsx', 'typescript'],
+      plugins: ['jsx', 'typescript', 'dynamicImport'],
     });
 
     traverse(ast, {
+      // Handle static import declarations
       ImportDeclaration({ node }) {
         imports.push({
           source: node.source.value,
           isRelative: node.source.value.startsWith('.'),
         });
+      },
+      // Handle dynamic import() expressions
+      ImportExpression({ node }) {
+        if (node.source && node.source.value) {
+          console.log(`Dynamic import found in ${filePath}: ${node.source.value}`); // Logging
+          imports.push({
+            source: node.source.value,
+            isRelative: node.source.value.startsWith('.'),
+          });
+        }
+      },
+      // Optional: Handle require() calls if using CommonJS
+      CallExpression({ node }) {
+        if (
+          node.callee.type === 'Identifier' &&
+          node.callee.name === 'require' &&
+          node.arguments.length === 1 &&
+          node.arguments[0].type === 'StringLiteral'
+        ) {
+          imports.push({
+            source: node.arguments[0].value,
+            isRelative: node.arguments[0].value.startsWith('.'),
+          });
+        }
+      },
+
+      // New handler for loadable dynamic imports
+      VariableDeclarator({ node }) {
+        if (
+          node.init &&
+          node.init.type === 'CallExpression' &&
+          node.init.callee.name === 'loadable' &&
+          node.init.arguments.length > 0
+        ) {
+          const arg = node.init.arguments[0];
+          if (arg.type === 'ArrowFunctionExpression' && arg.body.type === 'CallExpression') {
+            const importCall = arg.body;
+            if (importCall.callee.type === 'Import' && importCall.arguments.length > 0) {
+              const importPath = importCall.arguments[0].value;
+              console.log(`Loadable dynamic import found in ${filePath}: ${importPath}`);
+              imports.push({
+                source: importPath,
+                isRelative: importPath.startsWith('.'),
+              });
+            }
+          }
+        }
       },
     });
   } catch (error) {
@@ -67,8 +121,16 @@ function getPathAliases(rootDir) {
     const baseUrl = tsconfig.compilerOptions?.baseUrl || './';
 
     const aliases = {};
-    for (const [alias, [aliasPath]] of Object.entries(paths)) {
-      aliases[alias.replace('/*', '')] = path.join(rootDir, baseUrl, aliasPath.replace('/*', ''));
+    for (const [alias, aliasPaths] of Object.entries(paths)) {
+      // Handle multiple path mappings per alias
+      // For simplicity, take the first path if multiple are provided
+      if (Array.isArray(aliasPaths) && aliasPaths.length > 0) {
+        aliases[alias.replace('/*', '')] = path.join(
+          rootDir,
+          baseUrl,
+          aliasPaths[0].replace('/*', '')
+        );
+      }
     }
     return aliases;
   } catch (error) {
@@ -172,36 +234,36 @@ function buildDependencyGraph(rootDir) {
 }
 
 // Function to find the entry point of the dependency graph
-function findEntryPoint(dependencyGraph) {
-  const candidates = Object.entries(dependencyGraph)
-    .filter(([_, data]) => data.incomingDependencies.length === 0)
-    .map(([file, _]) => file);
+// function findEntryPoint(dependencyGraph) {
+//   const candidates = Object.entries(dependencyGraph)
+//     .filter(([_, data]) => data.incomingDependencies.length === 0)
+//     .map(([file, _]) => file);
 
-  if (candidates.length === 0) {
-    console.warn(
-      'No entry point found. The project might have circular dependencies.'
-    );
-    return null;
-  }
+//   if (candidates.length === 0) {
+//     console.warn(
+//       'No entry point found. The project might have circular dependencies.'
+//     );
+//     return null;
+//   }
 
-  if (candidates.length > 1) {
-    console.warn('Multiple potential entry points found:', candidates);
-  }
+//   if (candidates.length > 1) {
+//     console.warn('Multiple potential entry points found:', candidates);
+//   }
 
-  // Prioritize files named 'index.js', 'index.tsx', 'App.js', or 'App.tsx'
-  const priorityFiles = ['index.js', 'index.tsx', 'App.js', 'App.tsx'];
-  for (const priorityFile of priorityFiles) {
-    const found = candidates.find((file) => file.endsWith(priorityFile));
-    if (found) return found;
-  }
+//   // Prioritize files named 'index.js', 'index.tsx', 'App.js', or 'App.tsx'
+//   const priorityFiles = ['index.js', 'index.tsx', 'App.js', 'App.tsx'];
+//   for (const priorityFile of priorityFiles) {
+//     const found = candidates.find((file) => file.endsWith(priorityFile));
+//     if (found) return found;
+//   }
 
-  return candidates[0];
-}
+//   return candidates[0];
+// }
 
 // Example usage
 const rootDirectory = 'C:\\Users\\rikip\\Desktop\\simorgh';
 const graphData = buildDependencyGraph(rootDirectory);
-const entryPoint = findEntryPoint(graphData);
+// const entryPoint = findEntryPoint(graphData);
 
 console.log('Entry point:', entryPoint);
 fs.writeFileSync('dependencyGraph.json', JSON.stringify(graphData, null, 2));
