@@ -79,37 +79,61 @@ function getPathAliases(rootDir) {
 
 // Updated resolveImport function
 function resolveImport(rootDir, basePath, importPath, aliases) {
+  const extensions = ['.js', '.jsx', '.ts', '.tsx', '.css'];
+
+  // Helper function to check for file existence with extensions
+  function findFileWithExtensions(filePath) {
+    for (const ext of extensions) {
+      const fullPath = filePath + ext;
+      if (fs.existsSync(fullPath)) {
+        return fullPath;
+      }
+    }
+    return null;
+  }
+
+  // Helper function to check for index file in directory
+  function findIndexFile(dirPath) {
+    for (const ext of extensions) {
+      const indexPath = path.join(dirPath, 'index' + ext);
+      if (fs.existsSync(indexPath)) {
+        return indexPath;
+      }
+    }
+    return null;
+  }
+
   // Check if the import matches any alias
   for (const [alias, aliasPath] of Object.entries(aliases)) {
     if (importPath.startsWith(alias)) {
       const resolvedPath = path.join(aliasPath, importPath.slice(alias.length));
+      const fileWithExt = findFileWithExtensions(resolvedPath);
+      if (fileWithExt) {
+        return path.relative(rootDir, fileWithExt);
+      }
+      const indexFile = findIndexFile(resolvedPath);
+      if (indexFile) {
+        return path.relative(rootDir, indexFile);
+      }
+      // If still not found, return the normalized relative path
       return path.relative(rootDir, resolvedPath);
     }
   }
 
   if (importPath.startsWith('.')) {
     const absolutePath = path.resolve(path.dirname(basePath), importPath);
-    const relativePath = path.relative(rootDir, absolutePath);
-    const extensions = ['.js', '.jsx', '.ts', '.tsx', '.css'];
-    
-    for (const ext of extensions) {
-      const fullPath = absolutePath + ext;
-      if (fs.existsSync(fullPath)) {
-        return path.normalize(relativePath + ext);
-      }
+    const fileWithExt = findFileWithExtensions(absolutePath);
+    if (fileWithExt) {
+      return path.relative(rootDir, fileWithExt);
     }
-    
-    // If no file with extension found, try as a directory with index file
-    for (const ext of extensions) {
-      const indexPath = path.join(absolutePath, 'index' + ext);
-      if (fs.existsSync(indexPath)) {
-        return path.normalize(path.join(relativePath, 'index' + ext));
-      }
+    const indexFile = findIndexFile(absolutePath);
+    if (indexFile) {
+      return path.relative(rootDir, indexFile);
     }
-    
     // If still not found, return the normalized relative path
-    return path.normalize(relativePath);
+    return path.relative(rootDir, absolutePath);
   }
+
   return importPath; // Return as-is if it's not a relative import or alias
 }
 
