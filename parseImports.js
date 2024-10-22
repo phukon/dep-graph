@@ -11,10 +11,16 @@ function getAllFiles(dir, files = []) {
     const fullPath = path.resolve(dir, entry.name);
     if (entry.isDirectory()) {
       // Skip node_modules and dist directories
-      if (entry.name !== 'node_modules' && entry.name !== 'dist') {
+      if (entry.name !== 'node_modules' && entry.name !== 'dist' && entry.name !== '.storybook') {
         getAllFiles(fullPath, files);
       }
-    } else if (/\.(js|jsx|ts|tsx)$/.test(entry.name) && !entry.name.endsWith('.d.ts')) {
+    } else if (
+      /\.(js|jsx|ts|tsx)$/.test(entry.name) &&
+      !entry.name.endsWith('.d.ts') &&
+      !entry.name.endsWith('.test.js') &&
+      !entry.name.endsWith('.test.ts')
+    ) {
+      // Skip test files
       files.push(fullPath);
     }
   }
@@ -69,15 +75,19 @@ function resolveImport(basePath, importPath) {
 
 // Main function to build dependency graph data
 function buildDependencyGraph(rootDir) {
-  const files = getAllFiles(rootDir);
+  // Check if 'src' directory exists and use it if available
+  const srcDir = path.join(rootDir, 'src');
+  const targetDir = fs.existsSync(srcDir) ? srcDir : rootDir;
+
+  const files = getAllFiles(targetDir);
   const dependencyGraph = {};
 
-  files.forEach(file => {
+  files.forEach((file) => {
     const imports = extractImports(file);
     const relativePath = path.relative(rootDir, file);
     dependencyGraph[relativePath] = {
       incomingDependencies: [],
-      outgoingDependencies: imports.map(imp => ({
+      outgoingDependencies: imports.map((imp) => ({
         source: imp.source,
         resolvedPath: imp.isRelative
           ? path.relative(rootDir, resolveImport(file, imp.source))
@@ -88,7 +98,7 @@ function buildDependencyGraph(rootDir) {
 
   // Populate incoming dependencies
   Object.entries(dependencyGraph).forEach(([file, data]) => {
-    data.outgoingDependencies.forEach(dep => {
+    data.outgoingDependencies.forEach((dep) => {
       if (dependencyGraph[dep.resolvedPath]) {
         dependencyGraph[dep.resolvedPath].incomingDependencies.push(file);
       }
@@ -105,18 +115,20 @@ function findEntryPoint(dependencyGraph) {
     .map(([file, _]) => file);
 
   if (candidates.length === 0) {
-    console.warn("No entry point found. The project might have circular dependencies.");
+    console.warn(
+      'No entry point found. The project might have circular dependencies.'
+    );
     return null;
   }
 
   if (candidates.length > 1) {
-    console.warn("Multiple potential entry points found:", candidates);
+    console.warn('Multiple potential entry points found:', candidates);
   }
 
   // Prioritize files named 'index.js', 'index.tsx', 'App.js', or 'App.tsx'
   const priorityFiles = ['index.js', 'index.tsx', 'App.js', 'App.tsx'];
   for (const priorityFile of priorityFiles) {
-    const found = candidates.find(file => file.endsWith(priorityFile));
+    const found = candidates.find((file) => file.endsWith(priorityFile));
     if (found) return found;
   }
 
@@ -124,7 +136,7 @@ function findEntryPoint(dependencyGraph) {
 }
 
 // Example usage
-const rootDirectory = 'C:\\Users\\rikip\\Desktop\\simorgh';
+const rootDirectory = 'C:\\Users\\rikip\\Desktop\\EXIM\\work\\iterate-ai\\smallcase-sandbox';
 const graphData = buildDependencyGraph(rootDirectory);
 const entryPoint = findEntryPoint(graphData);
 
