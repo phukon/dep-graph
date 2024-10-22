@@ -52,23 +52,29 @@ function extractImports(filePath) {
 }
 
 // Function to resolve relative imports
-function resolveImport(basePath, importPath) {
+function resolveImport(rootDir, basePath, importPath) {
   if (importPath.startsWith('.')) {
-    const resolvedPath = path.resolve(path.dirname(basePath), importPath);
-    const extensions = ['.js', '.jsx', '.ts', '.tsx'];
+    const absolutePath = path.resolve(path.dirname(basePath), importPath);
+    const relativePath = path.relative(rootDir, absolutePath);
+    const extensions = ['.js', '.jsx', '.ts', '.tsx', '.css'];
+    
     for (const ext of extensions) {
-      const fullPath = resolvedPath + ext;
+      const fullPath = absolutePath + ext;
       if (fs.existsSync(fullPath)) {
-        return fullPath;
+        return path.normalize(relativePath + ext);
       }
     }
+    
     // If no file with extension found, try as a directory with index file
     for (const ext of extensions) {
-      const indexPath = path.join(resolvedPath, 'index' + ext);
+      const indexPath = path.join(absolutePath, 'index' + ext);
       if (fs.existsSync(indexPath)) {
-        return indexPath;
+        return path.normalize(path.join(relativePath, 'index' + ext));
       }
     }
+    
+    // If still not found, return the normalized relative path
+    return path.normalize(relativePath);
   }
   return importPath; // Return as-is if it's not a relative import
 }
@@ -90,7 +96,7 @@ function buildDependencyGraph(rootDir) {
       outgoingDependencies: imports.map((imp) => ({
         source: imp.source,
         resolvedPath: imp.isRelative
-          ? path.relative(rootDir, resolveImport(file, imp.source))
+          ? resolveImport(rootDir, file, imp.source)
           : imp.source,
       })),
     };
