@@ -10,17 +10,20 @@ function getAllFiles(dir, files = []) {
   for (let entry of entries) {
     const fullPath = path.resolve(dir, entry.name);
     if (entry.isDirectory()) {
-      // Skip node_modules and dist directories
-      if (entry.name !== 'node_modules' && entry.name !== 'dist' && entry.name !== '.storybook') {
+      // Skip node_modules, dist, and other specific directories
+      if (entry.name !== 'node_modules' && entry.name !== 'dist' && !entry.name.startsWith('.') && entry.name !== 'test' && entry.name !== 'tests') {
         getAllFiles(fullPath, files);
       }
     } else if (
       /\.(js|jsx|ts|tsx)$/.test(entry.name) &&
       !entry.name.endsWith('.d.ts') &&
       !entry.name.endsWith('.test.js') &&
-      !entry.name.endsWith('.test.ts')
+      !entry.name.endsWith('.test.ts') &&
+      !entry.name.endsWith('.test.jsx') &&
+      !entry.name.endsWith('.test.tsx') &&
+      !entry.name.endsWith('.stories.tsx') &&
+      !entry.name.endsWith('.stories.jsx')
     ) {
-      // Skip test files
       files.push(fullPath);
     }
   }
@@ -142,7 +145,7 @@ function findEntryPoint(dependencyGraph) {
 }
 
 // Example usage
-const rootDirectory = 'C:\\Users\\rikip\\Desktop\\EXIM\\work\\iterate-ai\\smallcase-sandbox';
+const rootDirectory = 'C:\\Users\\rikip\\Desktop\\simorgh';
 const graphData = buildDependencyGraph(rootDirectory);
 const entryPoint = findEntryPoint(graphData);
 

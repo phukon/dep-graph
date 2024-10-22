@@ -1,0 +1,1357 @@
+{
+  "app-jotai.ts": {
+    "incomingDependencies": [
+      "App.tsx",
+      "collab\\Collab.tsx"
+    ],
+    "outgoingDependencies": [
+      {
+        "source": "jotai",
+        "resolvedPath": "jotai"
+      }
+    ]
+  },
+  "app-language\\language-detector.ts": {
+    "incomingDependencies": [
+      "app-language\\language-state.ts",
+      "App.tsx"
+    ],
+    "outgoingDependencies": [
+      {
+        "source": "i18next-browser-languagedetector",
+        "resolvedPath": "i18next-browser-languagedetector"
+      },
+      {
+        "source": "../../packages/excalidraw",
+        "resolvedPath": "..\\packages\\excalidraw\\index.tsx"
+      }
+    ]
+  },
+  "app-language\\language-state.ts": {
+    "incomingDependencies": [
+      "app-language\\LanguageList.tsx",
+      "App.tsx"
+    ],
+    "outgoingDependencies": [
+      {
+        "source": "jotai",
+        "resolvedPath": "jotai"
+      },
+      {
+        "source": "react",
+        "resolvedPath": "react"
+      },
+      {
+        "source": "./language-detector",
+        "resolvedPath": "app-language\\language-detector.ts"
+      }
+    ]
+  },
+  "app-language\\LanguageList.tsx": {
+    "incomingDependencies": [
+      "components\\AppMainMenu.tsx"
+    ],
+    "outgoingDependencies": [
+      {
+        "source": "jotai",
+        "resolvedPath": "jotai"
+      },
+      {
+        "source": "react",
+        "resolvedPath": "react"
+      },
+      {
+        "source": "../../packages/excalidraw/i18n",
+        "resolvedPath": "..\\packages\\excalidraw\\i18n.ts"
+      },
+      {
+        "source": "./language-state",
+        "resolvedPath": "app-language\\language-state.ts"
+      }
+    ]
+  },
+  "App.tsx": {
+    "incomingDependencies": [
+      "index.tsx"
+    ],
+    "outgoingDependencies": [
+      {
+        "source": "../packages/excalidraw/polyfill",
+        "resolvedPath": "..\\packages\\excalidraw\\polyfill.ts"
+      },
+      {
+        "source": "react",
+        "resolvedPath": "react"
+      },
+      {
+        "source": "../packages/excalidraw/analytics",
+        "resolvedPath": "..\\packages\\excalidraw\\analytics.ts"
+      },
+      {
+        "source": "../packages/excalidraw/appState",
+        "resolvedPath": "..\\packages\\excalidraw\\appState.ts"
+      },
+      {
+        "source": "../packages/excalidraw/components/ErrorDialog",
+        "resolvedPath": "..\\packages\\excalidraw\\components\\ErrorDialog.tsx"
+      },
+      {
+        "source": "./components/TopErrorBoundary",
+        "resolvedPath": "components\\TopErrorBoundary.tsx"
+      },
+      {
+        "source": "../packages/excalidraw/constants",
+        "resolvedPath": "..\\packages\\excalidraw\\constants.ts"
+      },
+      {
+        "source": "../packages/excalidraw/data/blob",
+        "resolvedPath": "..\\packages\\excalidraw\\data\\blob.ts"
+      },
+      {
+        "source": "../packages/excalidraw/element/types",
+        "resolvedPath": "..\\packages\\excalidraw\\element\\types.ts"
+      },
+      {
+        "source": "../packages/excalidraw/hooks/useCallbackRefState",
+        "resolvedPath": "..\\packages\\excalidraw\\hooks\\useCallbackRefState.ts"
+      },
+      {
+        "source": "../packages/excalidraw/i18n",
+        "resolvedPath": "..\\packages\\excalidraw\\i18n.ts"
+      },
+      {
+        "source": "../packages/excalidraw",
+        "resolvedPath": "..\\packages\\excalidraw\\index.tsx"
+      },
+      {
+        "source": "../packages/excalidraw/types",
+        "resolvedPath": "..\\packages\\excalidraw\\types.ts"
+      },
+      {
+        "source": "../packages/excalidraw/utils",
+        "resolvedPath": "..\\packages\\excalidraw\\utils.ts"
+      },
+      {
+        "source": "../packages/excalidraw/utils",
+        "resolvedPath": "..\\packages\\excalidraw\\utils.ts"
+      },
+      {
+        "source": "./app_constants",
+        "resolvedPath": "app_constants.ts"
+      },
+      {
+        "source": "./collab/Collab",
+        "resolvedPath": "collab\\Collab.tsx"
+      },
+      {
+        "source": "./collab/Collab",
+        "resolvedPath": "collab\\Collab.tsx"
+      },
+      {
+        "source": "./data",
+        "resolvedPath": "data\\index.ts"
+      },
+      {
+        "source": "./data/localStorage",
+        "resolvedPath": "data\\localStorage.ts"
+      },
+      {
+        "source": "./CustomStats",
+        "resolvedPath": "CustomStats.tsx"
+      },
+      {
+        "source": "../packages/excalidraw/data/restore",
+        "resolvedPath": "..\\packages\\excalidraw\\data\\restore.ts"
+      },
+      {
+        "source": "../packages/excalidraw/data/restore",
+        "resolvedPath": "..\\packages\\excalidraw\\data\\restore.ts"
+      },
+      {
+        "source": "./components/ExportToExcalidrawPlus",
+        "resolvedPath": "components\\ExportToExcalidrawPlus.tsx"
+      },
+      {
+        "source": "./data/FileManager",
+        "resolvedPath": "data\\FileManager.ts"
+      },
+      {
+        "source": "../packages/excalidraw/element/mutateElement",
+        "resolvedPath": "..\\packages\\excalidraw\\element\\mutateElement.ts"
+      },
+      {
+        "source": "../packages/excalidraw/element/typeChecks",
+        "resolvedPath": "..\\packages\\excalidraw\\element\\typeChecks.ts"
+      },
+      {
+        "source": "./data/firebase",
+        "resolvedPath": "data\\firebase.ts"
+      },
+      {
+        "source": "./data/LocalData",
+        "resolvedPath": "data\\LocalData.ts"
+      },
+      {
+        "source": "./data/tabSync",
+        "resolvedPath": "data\\tabSync.ts"
+      },
+      {
+        "source": "clsx",
+        "resolvedPath": "clsx"
+      },
+      {
+        "source": "../packages/excalidraw/data/library",
+        "resolvedPath": "..\\packages\\excalidraw\\data\\library.ts"
+      },
+      {
+        "source": "./components/AppMainMenu",
+        "resolvedPath": "components\\AppMainMenu.tsx"
+      },
+      {
+        "source": "./components/AppWelcomeScreen",
+        "resolvedPath": "components\\AppWelcomeScreen.tsx"
+      },
+      {
+        "source": "./components/AppFooter",
+        "resolvedPath": "components\\AppFooter.tsx"
+      },
+      {
+        "source": "jotai",
+        "resolvedPath": "jotai"
+      },
+      {
+        "source": "../packages/excalidraw/jotai",
+        "resolvedPath": "..\\packages\\excalidraw\\jotai.ts"
+      },
+      {
+        "source": "./app-jotai",
+        "resolvedPath": "app-jotai.ts"
+      },
+      {
+        "source": "./index.scss",
+        "resolvedPath": "index.scss"
+      },
+      {
+        "source": "../packages/excalidraw/utility-types",
+        "resolvedPath": "..\\packages\\excalidraw\\utility-types.ts"
+      },
+      {
+        "source": "../packages/excalidraw/components/ShareableLinkDialog",
+        "resolvedPath": "..\\packages\\excalidraw\\components\\ShareableLinkDialog.tsx"
+      },
+      {
+        "source": "../packages/excalidraw/components/OverwriteConfirm/OverwriteConfirmState",
+        "resolvedPath": "..\\packages\\excalidraw\\components\\OverwriteConfirm\\OverwriteConfirmState.ts"
+      },
+      {
+        "source": "../packages/excalidraw/components/OverwriteConfirm/OverwriteConfirm",
+        "resolvedPath": "..\\packages\\excalidraw\\components\\OverwriteConfirm\\OverwriteConfirm.tsx"
+      },
+      {
+        "source": "../packages/excalidraw/components/Trans",
+        "resolvedPath": "..\\packages\\excalidraw\\components\\Trans.tsx"
+      },
+      {
+        "source": "./share/ShareDialog",
+        "resolvedPath": "share\\ShareDialog.tsx"
+      },
+      {
+        "source": "./collab/CollabError",
+        "resolvedPath": "collab\\CollabError.tsx"
+      },
+      {
+        "source": "../packages/excalidraw/data/reconcile",
+        "resolvedPath": "..\\packages\\excalidraw\\data\\reconcile.ts"
+      },
+      {
+        "source": "../packages/excalidraw/components/CommandPalette/CommandPalette",
+        "resolvedPath": "..\\packages\\excalidraw\\components\\CommandPalette\\CommandPalette.tsx"
+      },
+      {
+        "source": "../packages/excalidraw/components/icons",
+        "resolvedPath": "..\\packages\\excalidraw\\components\\icons.tsx"
+      },
+      {
+        "source": "./useHandleAppTheme",
+        "resolvedPath": "useHandleAppTheme.ts"
+      },
+      {
+        "source": "./app-language/language-detector",
+        "resolvedPath": "app-language\\language-detector.ts"
+      },
+      {
+        "source": "./app-language/language-state",
+        "resolvedPath": "app-language\\language-state.ts"
+      },
+      {
+        "source": "./components/DebugCanvas",
+        "resolvedPath": "components\\DebugCanvas.tsx"
+      },
+      {
+        "source": "./components/AI",
+        "resolvedPath": "components\\AI.tsx"
+      }
+    ]
+  },
+  "app_constants.ts": {
+    "incomingDependencies": [
+      "App.tsx",
+      "collab\\Collab.tsx",
+      "collab\\Portal.tsx",
+      "components\\AppFooter.tsx",
+      "components\\AppMainMenu.tsx",
+      "components\\AppWelcomeScreen.tsx",
+      "components\\DebugCanvas.tsx",
+      "components\\ExcalidrawPlusAppLink.tsx",
+      "components\\ExportToExcalidrawPlus.tsx",
+      "data\\firebase.ts",
+      "data\\index.ts",
+      "data\\index.ts",
+      "data\\LocalData.ts",
+      "data\\localStorage.ts",
+      "data\\tabSync.ts",
+      "useHandleAppTheme.ts"
+    ],
+    "outgoingDependencies": []
+  },
+  "bug-issue-template.js": {
+    "incomingDependencies": [],
+    "outgoingDependencies": []
+  },
+  "collab\\Collab.tsx": {
+    "incomingDependencies": [
+      "App.tsx",
+      "App.tsx",
+      "collab\\Portal.tsx",
+      "share\\ShareDialog.tsx",
+      "share\\ShareDialog.tsx"
+    ],
+    "outgoingDependencies": [
+      {
+        "source": "lodash.throttle",
+        "resolvedPath": "lodash.throttle"
+      },
+      {
+        "source": "react",
+        "resolvedPath": "react"
+      },
+      {
+        "source": "../../packages/excalidraw/types",
+        "resolvedPath": "..\\packages\\excalidraw\\types.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/components/ErrorDialog",
+        "resolvedPath": "..\\packages\\excalidraw\\components\\ErrorDialog.tsx"
+      },
+      {
+        "source": "../../packages/excalidraw/constants",
+        "resolvedPath": "..\\packages\\excalidraw\\constants.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/data/types",
+        "resolvedPath": "..\\packages\\excalidraw\\data\\types.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/element/types",
+        "resolvedPath": "..\\packages\\excalidraw\\element\\types.ts"
+      },
+      {
+        "source": "../../packages/excalidraw",
+        "resolvedPath": "..\\packages\\excalidraw\\index.tsx"
+      },
+      {
+        "source": "../../packages/excalidraw/types",
+        "resolvedPath": "..\\packages\\excalidraw\\types.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/utils",
+        "resolvedPath": "..\\packages\\excalidraw\\utils.ts"
+      },
+      {
+        "source": "../app_constants",
+        "resolvedPath": "app_constants.ts"
+      },
+      {
+        "source": "../data",
+        "resolvedPath": "data\\index.ts"
+      },
+      {
+        "source": "../data",
+        "resolvedPath": "data\\index.ts"
+      },
+      {
+        "source": "../data/firebase",
+        "resolvedPath": "data\\firebase.ts"
+      },
+      {
+        "source": "../data/localStorage",
+        "resolvedPath": "data\\localStorage.ts"
+      },
+      {
+        "source": "./Portal",
+        "resolvedPath": "collab\\Portal.tsx"
+      },
+      {
+        "source": "../../packages/excalidraw/i18n",
+        "resolvedPath": "..\\packages\\excalidraw\\i18n.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/types",
+        "resolvedPath": "..\\packages\\excalidraw\\types.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/constants",
+        "resolvedPath": "..\\packages\\excalidraw\\constants.ts"
+      },
+      {
+        "source": "../data/FileManager",
+        "resolvedPath": "data\\FileManager.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/errors",
+        "resolvedPath": "..\\packages\\excalidraw\\errors.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/element/typeChecks",
+        "resolvedPath": "..\\packages\\excalidraw\\element\\typeChecks.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/element/mutateElement",
+        "resolvedPath": "..\\packages\\excalidraw\\element\\mutateElement.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/data/encryption",
+        "resolvedPath": "..\\packages\\excalidraw\\data\\encryption.ts"
+      },
+      {
+        "source": "../data/tabSync",
+        "resolvedPath": "data\\tabSync.ts"
+      },
+      {
+        "source": "../data/LocalData",
+        "resolvedPath": "data\\LocalData.ts"
+      },
+      {
+        "source": "jotai",
+        "resolvedPath": "jotai"
+      },
+      {
+        "source": "../app-jotai",
+        "resolvedPath": "app-jotai.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/utility-types",
+        "resolvedPath": "..\\packages\\excalidraw\\utility-types.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/element/bounds",
+        "resolvedPath": "..\\packages\\excalidraw\\element\\bounds.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/reactUtils",
+        "resolvedPath": "..\\packages\\excalidraw\\reactUtils.ts"
+      },
+      {
+        "source": "./CollabError",
+        "resolvedPath": "collab\\CollabError.tsx"
+      },
+      {
+        "source": "../../packages/excalidraw/data/reconcile",
+        "resolvedPath": "..\\packages\\excalidraw\\data\\reconcile.ts"
+      }
+    ]
+  },
+  "collab\\CollabError.tsx": {
+    "incomingDependencies": [
+      "App.tsx",
+      "collab\\Collab.tsx"
+    ],
+    "outgoingDependencies": [
+      {
+        "source": "../../packages/excalidraw/components/Tooltip",
+        "resolvedPath": "..\\packages\\excalidraw\\components\\Tooltip.tsx"
+      },
+      {
+        "source": "../../packages/excalidraw/components/icons",
+        "resolvedPath": "..\\packages\\excalidraw\\components\\icons.tsx"
+      },
+      {
+        "source": "clsx",
+        "resolvedPath": "clsx"
+      },
+      {
+        "source": "react",
+        "resolvedPath": "react"
+      },
+      {
+        "source": "./CollabError.scss",
+        "resolvedPath": "collab\\CollabError.scss"
+      },
+      {
+        "source": "jotai",
+        "resolvedPath": "jotai"
+      }
+    ]
+  },
+  "collab\\Portal.tsx": {
+    "incomingDependencies": [
+      "collab\\Collab.tsx",
+      "data\\firebase.ts"
+    ],
+    "outgoingDependencies": [
+      {
+        "source": "../data",
+        "resolvedPath": "data\\index.ts"
+      },
+      {
+        "source": "../data",
+        "resolvedPath": "data\\index.ts"
+      },
+      {
+        "source": "./Collab",
+        "resolvedPath": "collab\\Collab.tsx"
+      },
+      {
+        "source": "../../packages/excalidraw/element/types",
+        "resolvedPath": "..\\packages\\excalidraw\\element\\types.ts"
+      },
+      {
+        "source": "../app_constants",
+        "resolvedPath": "app_constants.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/types",
+        "resolvedPath": "..\\packages\\excalidraw\\types.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/analytics",
+        "resolvedPath": "..\\packages\\excalidraw\\analytics.ts"
+      },
+      {
+        "source": "lodash.throttle",
+        "resolvedPath": "lodash.throttle"
+      },
+      {
+        "source": "../../packages/excalidraw/element/mutateElement",
+        "resolvedPath": "..\\packages\\excalidraw\\element\\mutateElement.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/data/encryption",
+        "resolvedPath": "..\\packages\\excalidraw\\data\\encryption.ts"
+      },
+      {
+        "source": "socket.io-client",
+        "resolvedPath": "socket.io-client"
+      },
+      {
+        "source": "../../packages/excalidraw",
+        "resolvedPath": "..\\packages\\excalidraw\\index.tsx"
+      }
+    ]
+  },
+  "components\\AI.tsx": {
+    "incomingDependencies": [
+      "App.tsx"
+    ],
+    "outgoingDependencies": [
+      {
+        "source": "../../packages/excalidraw/types",
+        "resolvedPath": "..\\packages\\excalidraw\\types.ts"
+      },
+      {
+        "source": "../../packages/excalidraw",
+        "resolvedPath": "..\\packages\\excalidraw\\index.tsx"
+      },
+      {
+        "source": "../../packages/excalidraw/data/blob",
+        "resolvedPath": "..\\packages\\excalidraw\\data\\blob.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/utils",
+        "resolvedPath": "..\\packages\\excalidraw\\utils.ts"
+      }
+    ]
+  },
+  "components\\AppFooter.tsx": {
+    "incomingDependencies": [
+      "App.tsx"
+    ],
+    "outgoingDependencies": [
+      {
+        "source": "react",
+        "resolvedPath": "react"
+      },
+      {
+        "source": "../../packages/excalidraw/index",
+        "resolvedPath": "..\\packages\\excalidraw\\index.tsx"
+      },
+      {
+        "source": "./EncryptedIcon",
+        "resolvedPath": "components\\EncryptedIcon.tsx"
+      },
+      {
+        "source": "./ExcalidrawPlusAppLink",
+        "resolvedPath": "components\\ExcalidrawPlusAppLink.tsx"
+      },
+      {
+        "source": "../app_constants",
+        "resolvedPath": "app_constants.ts"
+      },
+      {
+        "source": "./DebugCanvas",
+        "resolvedPath": "components\\DebugCanvas.tsx"
+      }
+    ]
+  },
+  "components\\AppMainMenu.tsx": {
+    "incomingDependencies": [
+      "App.tsx"
+    ],
+    "outgoingDependencies": [
+      {
+        "source": "react",
+        "resolvedPath": "react"
+      },
+      {
+        "source": "../../packages/excalidraw/components/icons",
+        "resolvedPath": "..\\packages\\excalidraw\\components\\icons.tsx"
+      },
+      {
+        "source": "../../packages/excalidraw/element/types",
+        "resolvedPath": "..\\packages\\excalidraw\\element\\types.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/index",
+        "resolvedPath": "..\\packages\\excalidraw\\index.tsx"
+      },
+      {
+        "source": "../app_constants",
+        "resolvedPath": "app_constants.ts"
+      },
+      {
+        "source": "../app-language/LanguageList",
+        "resolvedPath": "app-language\\LanguageList.tsx"
+      },
+      {
+        "source": "./DebugCanvas",
+        "resolvedPath": "components\\DebugCanvas.tsx"
+      }
+    ]
+  },
+  "components\\AppWelcomeScreen.tsx": {
+    "incomingDependencies": [
+      "App.tsx"
+    ],
+    "outgoingDependencies": [
+      {
+        "source": "react",
+        "resolvedPath": "react"
+      },
+      {
+        "source": "../../packages/excalidraw/components/icons",
+        "resolvedPath": "..\\packages\\excalidraw\\components\\icons.tsx"
+      },
+      {
+        "source": "../../packages/excalidraw/i18n",
+        "resolvedPath": "..\\packages\\excalidraw\\i18n.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/index",
+        "resolvedPath": "..\\packages\\excalidraw\\index.tsx"
+      },
+      {
+        "source": "../app_constants",
+        "resolvedPath": "app_constants.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/constants",
+        "resolvedPath": "..\\packages\\excalidraw\\constants.ts"
+      }
+    ]
+  },
+  "components\\DebugCanvas.tsx": {
+    "incomingDependencies": [
+      "App.tsx",
+      "components\\AppFooter.tsx",
+      "components\\AppMainMenu.tsx"
+    ],
+    "outgoingDependencies": [
+      {
+        "source": "react",
+        "resolvedPath": "react"
+      },
+      {
+        "source": "../../packages/excalidraw/types",
+        "resolvedPath": "..\\packages\\excalidraw\\types.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/utils",
+        "resolvedPath": "..\\packages\\excalidraw\\utils.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/renderer/helpers",
+        "resolvedPath": "..\\packages\\excalidraw\\renderer\\helpers.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/visualdebug",
+        "resolvedPath": "..\\packages\\excalidraw\\visualdebug.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/components/icons",
+        "resolvedPath": "..\\packages\\excalidraw\\components\\icons.tsx"
+      },
+      {
+        "source": "../app_constants",
+        "resolvedPath": "app_constants.ts"
+      },
+      {
+        "source": "../../packages/math",
+        "resolvedPath": "..\\packages\\math\\index.ts"
+      }
+    ]
+  },
+  "components\\EncryptedIcon.tsx": {
+    "incomingDependencies": [
+      "components\\AppFooter.tsx"
+    ],
+    "outgoingDependencies": [
+      {
+        "source": "../../packages/excalidraw/components/icons",
+        "resolvedPath": "..\\packages\\excalidraw\\components\\icons.tsx"
+      },
+      {
+        "source": "../../packages/excalidraw/components/Tooltip",
+        "resolvedPath": "..\\packages\\excalidraw\\components\\Tooltip.tsx"
+      },
+      {
+        "source": "../../packages/excalidraw/i18n",
+        "resolvedPath": "..\\packages\\excalidraw\\i18n.ts"
+      }
+    ]
+  },
+  "components\\ExcalidrawPlusAppLink.tsx": {
+    "incomingDependencies": [
+      "components\\AppFooter.tsx"
+    ],
+    "outgoingDependencies": [
+      {
+        "source": "../app_constants",
+        "resolvedPath": "app_constants.ts"
+      }
+    ]
+  },
+  "components\\ExportToExcalidrawPlus.tsx": {
+    "incomingDependencies": [
+      "App.tsx"
+    ],
+    "outgoingDependencies": [
+      {
+        "source": "react",
+        "resolvedPath": "react"
+      },
+      {
+        "source": "../../packages/excalidraw/components/Card",
+        "resolvedPath": "..\\packages\\excalidraw\\components\\Card.tsx"
+      },
+      {
+        "source": "../../packages/excalidraw/components/ToolButton",
+        "resolvedPath": "..\\packages\\excalidraw\\components\\ToolButton.tsx"
+      },
+      {
+        "source": "../../packages/excalidraw/data/json",
+        "resolvedPath": "..\\packages\\excalidraw\\data\\json.ts"
+      },
+      {
+        "source": "../data/firebase",
+        "resolvedPath": "data\\firebase.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/element/types",
+        "resolvedPath": "..\\packages\\excalidraw\\element\\types.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/types",
+        "resolvedPath": "..\\packages\\excalidraw\\types.ts"
+      },
+      {
+        "source": "nanoid",
+        "resolvedPath": "nanoid"
+      },
+      {
+        "source": "../../packages/excalidraw/i18n",
+        "resolvedPath": "..\\packages\\excalidraw\\i18n.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/data/encryption",
+        "resolvedPath": "..\\packages\\excalidraw\\data\\encryption.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/element/typeChecks",
+        "resolvedPath": "..\\packages\\excalidraw\\element\\typeChecks.ts"
+      },
+      {
+        "source": "../app_constants",
+        "resolvedPath": "app_constants.ts"
+      },
+      {
+        "source": "../data/FileManager",
+        "resolvedPath": "data\\FileManager.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/constants",
+        "resolvedPath": "..\\packages\\excalidraw\\constants.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/analytics",
+        "resolvedPath": "..\\packages\\excalidraw\\analytics.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/utils",
+        "resolvedPath": "..\\packages\\excalidraw\\utils.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/components/ExcalidrawLogo",
+        "resolvedPath": "..\\packages\\excalidraw\\components\\ExcalidrawLogo.tsx"
+      }
+    ]
+  },
+  "components\\GitHubCorner.tsx": {
+    "incomingDependencies": [],
+    "outgoingDependencies": [
+      {
+        "source": "open-color",
+        "resolvedPath": "open-color"
+      },
+      {
+        "source": "react",
+        "resolvedPath": "react"
+      },
+      {
+        "source": "../../packages/excalidraw/constants",
+        "resolvedPath": "..\\packages\\excalidraw\\constants.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/element/types",
+        "resolvedPath": "..\\packages\\excalidraw\\element\\types.ts"
+      }
+    ]
+  },
+  "components\\TopErrorBoundary.tsx": {
+    "incomingDependencies": [
+      "App.tsx"
+    ],
+    "outgoingDependencies": [
+      {
+        "source": "react",
+        "resolvedPath": "react"
+      },
+      {
+        "source": "@sentry/browser",
+        "resolvedPath": "@sentry/browser"
+      },
+      {
+        "source": "../../packages/excalidraw/i18n",
+        "resolvedPath": "..\\packages\\excalidraw\\i18n.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/components/Trans",
+        "resolvedPath": "..\\packages\\excalidraw\\components\\Trans.tsx"
+      }
+    ]
+  },
+  "CustomStats.tsx": {
+    "incomingDependencies": [
+      "App.tsx"
+    ],
+    "outgoingDependencies": [
+      {
+        "source": "react",
+        "resolvedPath": "react"
+      },
+      {
+        "source": "../packages/excalidraw/utils",
+        "resolvedPath": "..\\packages\\excalidraw\\utils.ts"
+      },
+      {
+        "source": "./data/localStorage",
+        "resolvedPath": "data\\localStorage.ts"
+      },
+      {
+        "source": "../packages/excalidraw/constants",
+        "resolvedPath": "..\\packages\\excalidraw\\constants.ts"
+      },
+      {
+        "source": "../packages/excalidraw/i18n",
+        "resolvedPath": "..\\packages\\excalidraw\\i18n.ts"
+      },
+      {
+        "source": "../packages/excalidraw/clipboard",
+        "resolvedPath": "..\\packages\\excalidraw\\clipboard.ts"
+      },
+      {
+        "source": "../packages/excalidraw/element/types",
+        "resolvedPath": "..\\packages\\excalidraw\\element\\types.ts"
+      },
+      {
+        "source": "../packages/excalidraw/types",
+        "resolvedPath": "..\\packages\\excalidraw\\types.ts"
+      },
+      {
+        "source": "../packages/excalidraw",
+        "resolvedPath": "..\\packages\\excalidraw\\index.tsx"
+      }
+    ]
+  },
+  "data\\FileManager.ts": {
+    "incomingDependencies": [
+      "App.tsx",
+      "collab\\Collab.tsx",
+      "components\\ExportToExcalidrawPlus.tsx",
+      "data\\index.ts",
+      "data\\LocalData.ts"
+    ],
+    "outgoingDependencies": [
+      {
+        "source": "../../packages/excalidraw",
+        "resolvedPath": "..\\packages\\excalidraw\\index.tsx"
+      },
+      {
+        "source": "../../packages/excalidraw/data/encode",
+        "resolvedPath": "..\\packages\\excalidraw\\data\\encode.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/element/mutateElement",
+        "resolvedPath": "..\\packages\\excalidraw\\element\\mutateElement.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/element/typeChecks",
+        "resolvedPath": "..\\packages\\excalidraw\\element\\typeChecks.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/element/types",
+        "resolvedPath": "..\\packages\\excalidraw\\element\\types.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/i18n",
+        "resolvedPath": "..\\packages\\excalidraw\\i18n.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/types",
+        "resolvedPath": "..\\packages\\excalidraw\\types.ts"
+      }
+    ]
+  },
+  "data\\firebase.ts": {
+    "incomingDependencies": [
+      "App.tsx",
+      "collab\\Collab.tsx",
+      "components\\ExportToExcalidrawPlus.tsx",
+      "data\\index.ts"
+    ],
+    "outgoingDependencies": [
+      {
+        "source": "../../packages/excalidraw",
+        "resolvedPath": "..\\packages\\excalidraw\\index.tsx"
+      },
+      {
+        "source": "../../packages/excalidraw/element/types",
+        "resolvedPath": "..\\packages\\excalidraw\\element\\types.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/element",
+        "resolvedPath": "..\\packages\\excalidraw\\element\\index.ts"
+      },
+      {
+        "source": "../collab/Portal",
+        "resolvedPath": "collab\\Portal.tsx"
+      },
+      {
+        "source": "../../packages/excalidraw/data/restore",
+        "resolvedPath": "..\\packages\\excalidraw\\data\\restore.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/types",
+        "resolvedPath": "..\\packages\\excalidraw\\types.ts"
+      },
+      {
+        "source": "../app_constants",
+        "resolvedPath": "app_constants.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/data/encode",
+        "resolvedPath": "..\\packages\\excalidraw\\data\\encode.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/data/encryption",
+        "resolvedPath": "..\\packages\\excalidraw\\data\\encryption.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/constants",
+        "resolvedPath": "..\\packages\\excalidraw\\constants.ts"
+      },
+      {
+        "source": ".",
+        "resolvedPath": "data\\index.ts"
+      },
+      {
+        "source": ".",
+        "resolvedPath": "data\\index.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/utility-types",
+        "resolvedPath": "..\\packages\\excalidraw\\utility-types.ts"
+      },
+      {
+        "source": "socket.io-client",
+        "resolvedPath": "socket.io-client"
+      },
+      {
+        "source": "../../packages/excalidraw/data/reconcile",
+        "resolvedPath": "..\\packages\\excalidraw\\data\\reconcile.ts"
+      }
+    ]
+  },
+  "data\\index.ts": {
+    "incomingDependencies": [
+      "App.tsx",
+      "collab\\Collab.tsx",
+      "collab\\Collab.tsx",
+      "collab\\Portal.tsx",
+      "collab\\Portal.tsx",
+      "data\\firebase.ts",
+      "data\\firebase.ts"
+    ],
+    "outgoingDependencies": [
+      {
+        "source": "../../packages/excalidraw/data/encode",
+        "resolvedPath": "..\\packages\\excalidraw\\data\\encode.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/data/encryption",
+        "resolvedPath": "..\\packages\\excalidraw\\data\\encryption.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/data/json",
+        "resolvedPath": "..\\packages\\excalidraw\\data\\json.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/data/restore",
+        "resolvedPath": "..\\packages\\excalidraw\\data\\restore.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/data/types",
+        "resolvedPath": "..\\packages\\excalidraw\\data\\types.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/element/bounds",
+        "resolvedPath": "..\\packages\\excalidraw\\element\\bounds.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/element/sizeHelpers",
+        "resolvedPath": "..\\packages\\excalidraw\\element\\sizeHelpers.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/element/typeChecks",
+        "resolvedPath": "..\\packages\\excalidraw\\element\\typeChecks.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/element/types",
+        "resolvedPath": "..\\packages\\excalidraw\\element\\types.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/i18n",
+        "resolvedPath": "..\\packages\\excalidraw\\i18n.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/types",
+        "resolvedPath": "..\\packages\\excalidraw\\types.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/utility-types",
+        "resolvedPath": "..\\packages\\excalidraw\\utility-types.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/utils",
+        "resolvedPath": "..\\packages\\excalidraw\\utils.ts"
+      },
+      {
+        "source": "../app_constants",
+        "resolvedPath": "app_constants.ts"
+      },
+      {
+        "source": "../app_constants",
+        "resolvedPath": "app_constants.ts"
+      },
+      {
+        "source": "./FileManager",
+        "resolvedPath": "data\\FileManager.ts"
+      },
+      {
+        "source": "./firebase",
+        "resolvedPath": "data\\firebase.ts"
+      }
+    ]
+  },
+  "data\\LocalData.ts": {
+    "incomingDependencies": [
+      "App.tsx",
+      "collab\\Collab.tsx"
+    ],
+    "outgoingDependencies": [
+      {
+        "source": "idb-keyval",
+        "resolvedPath": "idb-keyval"
+      },
+      {
+        "source": "../../packages/excalidraw/appState",
+        "resolvedPath": "..\\packages\\excalidraw\\appState.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/constants",
+        "resolvedPath": "..\\packages\\excalidraw\\constants.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/data/library",
+        "resolvedPath": "..\\packages\\excalidraw\\data\\library.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/data/types",
+        "resolvedPath": "..\\packages\\excalidraw\\data\\types.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/element",
+        "resolvedPath": "..\\packages\\excalidraw\\element\\index.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/element/types",
+        "resolvedPath": "..\\packages\\excalidraw\\element\\types.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/types",
+        "resolvedPath": "..\\packages\\excalidraw\\types.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/utility-types",
+        "resolvedPath": "..\\packages\\excalidraw\\utility-types.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/utils",
+        "resolvedPath": "..\\packages\\excalidraw\\utils.ts"
+      },
+      {
+        "source": "../app_constants",
+        "resolvedPath": "app_constants.ts"
+      },
+      {
+        "source": "./FileManager",
+        "resolvedPath": "data\\FileManager.ts"
+      },
+      {
+        "source": "./Locker",
+        "resolvedPath": "data\\Locker.ts"
+      },
+      {
+        "source": "./tabSync",
+        "resolvedPath": "data\\tabSync.ts"
+      }
+    ]
+  },
+  "data\\localStorage.ts": {
+    "incomingDependencies": [
+      "App.tsx",
+      "collab\\Collab.tsx",
+      "CustomStats.tsx"
+    ],
+    "outgoingDependencies": [
+      {
+        "source": "../../packages/excalidraw/element/types",
+        "resolvedPath": "..\\packages\\excalidraw\\element\\types.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/types",
+        "resolvedPath": "..\\packages\\excalidraw\\types.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/appState",
+        "resolvedPath": "..\\packages\\excalidraw\\appState.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/element",
+        "resolvedPath": "..\\packages\\excalidraw\\element\\index.ts"
+      },
+      {
+        "source": "../app_constants",
+        "resolvedPath": "app_constants.ts"
+      }
+    ]
+  },
+  "data\\Locker.ts": {
+    "incomingDependencies": [
+      "data\\LocalData.ts"
+    ],
+    "outgoingDependencies": []
+  },
+  "data\\tabSync.ts": {
+    "incomingDependencies": [
+      "App.tsx",
+      "collab\\Collab.tsx",
+      "data\\LocalData.ts"
+    ],
+    "outgoingDependencies": [
+      {
+        "source": "../app_constants",
+        "resolvedPath": "app_constants.ts"
+      }
+    ]
+  },
+  "debug.ts": {
+    "incomingDependencies": [],
+    "outgoingDependencies": []
+  },
+  "index.tsx": {
+    "incomingDependencies": [],
+    "outgoingDependencies": [
+      {
+        "source": "react",
+        "resolvedPath": "react"
+      },
+      {
+        "source": "react-dom/client",
+        "resolvedPath": "react-dom/client"
+      },
+      {
+        "source": "./App",
+        "resolvedPath": "App.tsx"
+      },
+      {
+        "source": "virtual:pwa-register",
+        "resolvedPath": "virtual:pwa-register"
+      },
+      {
+        "source": "../excalidraw-app/sentry",
+        "resolvedPath": "sentry.ts"
+      }
+    ]
+  },
+  "sentry.ts": {
+    "incomingDependencies": [
+      "index.tsx"
+    ],
+    "outgoingDependencies": [
+      {
+        "source": "@sentry/browser",
+        "resolvedPath": "@sentry/browser"
+      },
+      {
+        "source": "@sentry/integrations",
+        "resolvedPath": "@sentry/integrations"
+      }
+    ]
+  },
+  "share\\ShareDialog.tsx": {
+    "incomingDependencies": [
+      "App.tsx"
+    ],
+    "outgoingDependencies": [
+      {
+        "source": "react",
+        "resolvedPath": "react"
+      },
+      {
+        "source": "../../packages/excalidraw/clipboard",
+        "resolvedPath": "..\\packages\\excalidraw\\clipboard.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/analytics",
+        "resolvedPath": "..\\packages\\excalidraw\\analytics.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/utils",
+        "resolvedPath": "..\\packages\\excalidraw\\utils.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/i18n",
+        "resolvedPath": "..\\packages\\excalidraw\\i18n.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/keys",
+        "resolvedPath": "..\\packages\\excalidraw\\keys.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/components/Dialog",
+        "resolvedPath": "..\\packages\\excalidraw\\components\\Dialog.tsx"
+      },
+      {
+        "source": "../../packages/excalidraw/components/icons",
+        "resolvedPath": "..\\packages\\excalidraw\\components\\icons.tsx"
+      },
+      {
+        "source": "../../packages/excalidraw/components/TextField",
+        "resolvedPath": "..\\packages\\excalidraw\\components\\TextField.tsx"
+      },
+      {
+        "source": "../../packages/excalidraw/components/FilledButton",
+        "resolvedPath": "..\\packages\\excalidraw\\components\\FilledButton.tsx"
+      },
+      {
+        "source": "../collab/Collab",
+        "resolvedPath": "collab\\Collab.tsx"
+      },
+      {
+        "source": "../collab/Collab",
+        "resolvedPath": "collab\\Collab.tsx"
+      },
+      {
+        "source": "jotai",
+        "resolvedPath": "jotai"
+      },
+      {
+        "source": "./ShareDialog.scss",
+        "resolvedPath": "share\\ShareDialog.scss"
+      },
+      {
+        "source": "../../packages/excalidraw/context/ui-appState",
+        "resolvedPath": "..\\packages\\excalidraw\\context\\ui-appState.ts"
+      },
+      {
+        "source": "../../packages/excalidraw/hooks/useCopiedIndicator",
+        "resolvedPath": "..\\packages\\excalidraw\\hooks\\useCopiedIndicator.ts"
+      }
+    ]
+  },
+  "useHandleAppTheme.ts": {
+    "incomingDependencies": [
+      "App.tsx"
+    ],
+    "outgoingDependencies": [
+      {
+        "source": "jotai",
+        "resolvedPath": "jotai"
+      },
+      {
+        "source": "react",
+        "resolvedPath": "react"
+      },
+      {
+        "source": "../packages/excalidraw",
+        "resolvedPath": "..\\packages\\excalidraw\\index.tsx"
+      },
+      {
+        "source": "../packages/excalidraw/constants",
+        "resolvedPath": "..\\packages\\excalidraw\\constants.ts"
+      },
+      {
+        "source": "../packages/excalidraw/element/types",
+        "resolvedPath": "..\\packages\\excalidraw\\element\\types.ts"
+      },
+      {
+        "source": "../packages/excalidraw/keys",
+        "resolvedPath": "..\\packages\\excalidraw\\keys.ts"
+      },
+      {
+        "source": "./app_constants",
+        "resolvedPath": "app_constants.ts"
+      }
+    ]
+  }
+}

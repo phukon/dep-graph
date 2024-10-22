@@ -14,7 +14,6 @@ function findProbableEntryPoints(dependencyGraph) {
   return entryPoints;
 }
 
-// Example usage
 const graphData = JSON.parse(fs.readFileSync('dependencyGraph.json', 'utf-8'));
 const probableEntryPoints = findProbableEntryPoints(graphData);
 console.log('Probable entry points:', probableEntryPoints);
