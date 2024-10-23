@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const parser = require('@babel/parser');
 const traverse = require('@babel/traverse').default;
+const jsoncParser = require('jsonc-parser');
 
 // Function to recursively get all JS/JSX files in a directory
 function getAllFiles(dir, files = []) {
@@ -108,7 +109,7 @@ function extractImports(filePath) {
   return imports;
 }
 
-// New function to parse tsconfig.json and extract path aliases
+// Updated function to parse tsconfig.json and extract path aliases
 function getPathAliases(rootDir) {
   const tsconfigPath = path.join(rootDir, 'tsconfig.json');
   if (!fs.existsSync(tsconfigPath)) {
@@ -116,7 +117,8 @@ function getPathAliases(rootDir) {
   }
 
   try {
-    const tsconfig = JSON.parse(fs.readFileSync(tsconfigPath, 'utf-8'));
+    const tsconfigContent = fs.readFileSync(tsconfigPath, 'utf-8');
+    const tsconfig = jsoncParser.parse(tsconfigContent);
     const paths = tsconfig.compilerOptions?.paths || {};
     const baseUrl = tsconfig.compilerOptions?.baseUrl || './';
 
@@ -233,38 +235,7 @@ function buildDependencyGraph(rootDir) {
   return dependencyGraph;
 }
 
-// Function to find the entry point of the dependency graph
-// function findEntryPoint(dependencyGraph) {
-//   const candidates = Object.entries(dependencyGraph)
-//     .filter(([_, data]) => data.incomingDependencies.length === 0)
-//     .map(([file, _]) => file);
-
-//   if (candidates.length === 0) {
-//     console.warn(
-//       'No entry point found. The project might have circular dependencies.'
-//     );
-//     return null;
-//   }
-
-//   if (candidates.length > 1) {
-//     console.warn('Multiple potential entry points found:', candidates);
-//   }
-
-//   // Prioritize files named 'index.js', 'index.tsx', 'App.js', or 'App.tsx'
-//   const priorityFiles = ['index.js', 'index.tsx', 'App.js', 'App.tsx'];
-//   for (const priorityFile of priorityFiles) {
-//     const found = candidates.find((file) => file.endsWith(priorityFile));
-//     if (found) return found;
-//   }
-
-//   return candidates[0];
-// }
-
-// Example usage
-const rootDirectory = 'C:\\Users\\rikip\\Desktop\\simorgh';
+const rootDirectory = 'C:\\Users\\rikip\\Desktop\\EXIM\\Projects\\webdev\\citysort';
 const graphData = buildDependencyGraph(rootDirectory);
-// const entryPoint = findEntryPoint(graphData);
-
-console.log('Entry point:', entryPoint);
 fs.writeFileSync('dependencyGraph.json', JSON.stringify(graphData, null, 2));
 console.log('Dependency graph data saved to dependencyGraph.json');

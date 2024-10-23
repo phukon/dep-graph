@@ -16,6 +16,7 @@
     "fs": "^0.0.1-security",
     "graphlib": "^2.1.8",
     "graphlib-dot": "^0.6.4",
+    "jsonc-parser": "^3.3.1",
     "path": "^0.12.7"
   }
 }
