@@ -235,7 +235,7 @@ function buildDependencyGraph(rootDir) {
   return dependencyGraph;
 }
 
-const rootDirectory = 'C:\\Users\\rikip\\Desktop\\EXIM\\Projects\\webdev\\citysort';
+const rootDirectory = 'C:\\Users\\rikip\\Desktop\\excalidraw\\excalidraw-app';
 const graphData = buildDependencyGraph(rootDirectory);
 fs.writeFileSync('dependencyGraph.json', JSON.stringify(graphData, null, 2));
 console.log('Dependency graph data saved to dependencyGraph.json');
